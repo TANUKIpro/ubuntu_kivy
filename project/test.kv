@@ -1,0 +1,22 @@
+#:include gui/tab_test.kv  # 外部 Kv ファイルを取り込む
+
+<RootWidget>:
+    # button_include を RootWidget のプロパティとして定義
+    button_include: tab_button_include.button_include
+
+    TabbedPanel:
+        do_default_tab: False
+
+        TabbedPanelItem:
+            text: 'Tab1'
+            BoxLayout:
+                Button:
+                    text: 'button 1'
+                    on_press: root.print_obj(self)
+                Button:
+                    text: 'button 2'
+                    on_press: root.check_button_include()
+        TabbedPanelItem:
+            text: 'Tab2'
+            ButtonInclude:  # 外部 Kv ファイルで定義しているウィジェットクラスを使用
+                id: tab_button_include  # 定義したウィジェットクラスにid を振っておく

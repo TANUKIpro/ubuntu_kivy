@@ -1,0 +1,24 @@
+BoxLayout:
+	orientation: 'vertical'
+
+	Label:
+		text: "GooD Morning"
+		size_hint_y: 0.5
+	Label:
+		text: "Hello"
+		size_hint_y: 1
+	Label:
+		text: "Good Evening"
+		size_hint_y: 2
+		
+"""
+<解説>
+size_hint_y: <値> を新たにパラ―メータに加えています。それによりLabelの位置が変わっています。size_hint_xに値を加えることでx方向の大きさを、size_hint_yに値を加えることでｙ方向の大きさが変わります。デフォルトでは両方とも１に設定されています。
+大きさは画面全体の大きさ分の各比率になります。
+例として今回の場合は"Good Morning"のラベルのサイズですが、
+Y方向の比率 = (Good Morningの値)/(全部のsize_hintの値)=0.5/(0.5+1+2)=14%
+になり、画面全体で14%のサイズになります。
+
+size_hint以外に、座標を画面の比率から設定するpos_hintという設定もあります。ちなみにKivyでは座標を比率ではなく座標で指定することもできますがあまり推奨されていません。理由は画面サイズを自由に変更できるためにwidgetを座標で指定すると位置が固定のためにきれいに表示されないからです。
+
+"""
